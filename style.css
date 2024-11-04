@@ -491,7 +491,7 @@ hr {
     transition: all .5s ease-in-out;
 }
 .arrows{
-    display: block;
+    display: none;
     position: fixed;
     top: calc(50% - 30px);
     right: 50px;

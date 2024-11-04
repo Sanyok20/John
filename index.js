@@ -41,7 +41,7 @@ window.addEventListener("scroll", () => {
       arrowDown.style.display="flex"
       arrows.style.display="none"  
     } 
-    else if (window.scrollY > 400 && window.scrollY < 800) {
+    else if (window.scrollY > 600 && window.scrollY < 800) {
         arrowUp.style.display="none"
         arrowDown.style.display="none"
         arrows.style.display="block"  
