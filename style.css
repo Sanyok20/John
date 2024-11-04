@@ -697,6 +697,10 @@ hr {
         font-weight: 900;
         text-decoration: underline;
     }
+    .arrows, .arrow-up, .arrow-down{
+        position: absolute;
+        left: -300%;
+    }
     .location{
         gap: 0;
     }
