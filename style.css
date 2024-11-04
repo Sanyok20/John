@@ -5,8 +5,11 @@
     margin: 0;
     padding: 0;
 }
-
+html{
+    scroll-behavior: smooth;
+}
 body {
+    overflow-x: hidden;
     font-family: 'Heebo', sans-serif;
 }
 
@@ -462,7 +465,66 @@ hr {
     width: 100%;
     height: 400px;
 }
+.arrow-up{
+    display: none;
+    justify-content: center;    
+    align-items: center;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition: all .5s ease-in-out;
+}
 
+.arrow-down{
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition: all .5s ease-in-out;
+}
+.arrows{
+    display: block;
+    position: fixed;
+    top: calc(50% - 30px);
+    right: 50px;
+    height: 60px;
+}
+.arrow-middle-up{
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    right: 50px;
+    bottom: 50px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition: all .5s ease-in-out;
+}
+.arrow-middle-down{
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    right: 50px;
+    bottom: 50px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition: all .5s ease-in-out;
+}
+.arrow-up:hover, .arrow-down:hover, .arrow-middle-up:hover, .arrow-middle-down:hover {
+    background: #21243D;
+}
+.arrow-up:hover i, .arrow-down:hover i, .arrow-middle-up:hover i, .arrow-middle-down:hover i{
+    color: white;
+}
 @media screen and (max-width: 1151px) {
     .container {
         display: flex;
@@ -650,4 +712,5 @@ hr {
     .location + footer .social-icons{
         margin-top: -30px;
     }
+    
 }
