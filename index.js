@@ -8,29 +8,31 @@ let arrows = document.querySelector(".arrows")
 let arrowUp = document.querySelector(".arrow-up")
 let arrowDown = document.querySelector(".arrow-down")
 console.log(arrows)
-//show menu
+    //show menu
 burgerIcon.addEventListener("click", showMenu)
-function showMenu(){
+
+function showMenu() {
     nav.classList.toggle("mobile-nav")
 }
 console.log(burgerIcon)
 let workDetails = document.querySelectorAll(".work-details")
 console.log(workDetails)
-works.forEach(item => 
+works.forEach(item =>
     item.addEventListener("click", showDetails)
 )
-function showDetails(){
+
+function showDetails() {
     workDetails[this.dataset.number - 1].style.display = "block"
-    works.forEach(item => 
+    works.forEach(item =>
         item.style.display = "none"
     )
 }
 let posts = document.querySelectorAll(".post")
 console.log(posts)
 
-function showPosts(){
+function showPosts() {
     posts[this.dataset.number - 1].style.display = "block"
-    blog.forEach(item => 
+    blog.forEach(item =>
         item.style.display = "none"
     )
 }
@@ -38,24 +40,26 @@ let scrollHeight = Math.max(
     document.body.scrollHeight, document.documentElement.scrollHeight,
     document.body.offsetHeight, document.documentElement.offsetHeight,
     document.body.clientHeight, document.documentElement.clientHeight
-  );
+);
+const maxScrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+console.log(maxScrollHeight);
+
 window.addEventListener("scroll", () => {
-    if (window.scrollY <= scrollHeight * 0.27) {
-       arrowUp.style.display="none" 
-       arrowDown.style.display="flex"
-       arrows.style.display="none"  
-    } 
-    else if (window.scrollY > scrollHeight * 0.27 && window.scrollY < scrollHeight * 0.4) {
-        arrowUp.style.display="none"
-        arrowDown.style.display="none"
-        arrows.style.display="block"  
+    console.log(window.scrollY)
+    if (window.scrollY <= maxScrollHeight * 0.3) {
+        arrowUp.style.display = "none"
+        arrowDown.style.display = "flex"
+        arrows.style.display = "none"
+    } else if (window.scrollY > maxScrollHeight * 0.3 && window.scrollY < maxScrollHeight * 0.7) {
+        arrowUp.style.display = "none"
+        arrowDown.style.display = "none"
+        arrows.style.display = "block"
+    } else {
+        arrowUp.style.display = "flex"
+        arrowDown.style.display = "none"
+        arrows.style.display = "none"
     }
-    else{
-        arrowUp.style.display="flex"  
-        arrowDown.style.display="none"
-        arrows.style.display="none"  
-    }
-   });
+});
 window.onload = function() {
     let preloader = document.getElementById('preloader');
     preloader.classList.add('hide-preloader');
